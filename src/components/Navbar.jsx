@@ -1,33 +1,44 @@
-import { BiSearch } from 'react-icons/bi'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { BsFillPersonFill } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
+import { motion } from "motion/react"
+
+
 const Navbar = () => {
     return (
-        <div>
-            <header className="text-gray-600 body-font">
-                <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                    <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                        {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                        </svg> */}
-                        <span className="ml-3 text-xl">AirBnb</span>
-                    </a>
-                    <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                        <a className="mr-5 hover:text-gray-900">Any where</a>
-                        <a className="mr-5 hover:text-gray-900">Any week</a>
-                        <a className="mr-5 hover:text-gray-900">Add guest</a>
-                        <div><BiSearch /></div>
+        <div
 
-                    </nav>
-                    <div className='flex justify-center items-center gap-2 border-gray-200 shadow-md p-3 rounded-xl'>
-                        <div><GiHamburgerMenu /></div>
-                        <Link to='/login'><BsFillPersonFill /></Link>
+        >
+            <motion.div
+                initial={{ y: -60, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 70 }}
+                className="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-transparent py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
+                <div className="px-4">
+                    <div className="flex items-center justify-between">
+                        <div className="flex shrink-0">
+                            <a aria-current="page" className="flex items-center" href="/">
+                                <p className="text-white">Octopi Task 2</p>
+                            </a>
+                        </div>
+                        <div className="hidden md:flex md:items-center md:justify-center md:gap-5">
+                            <a aria-current="page"
+                                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-white transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                                href="#">How it works</a>
+                            <a className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                                href="#">Pricing</a>
+                        </div>
+                        <div className="flex items-center justify-end gap-3">
+                            <Link className="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"
+                                to="/manage-user">Manage User</Link>
+                            <Link className="hidden items-center justify-center rounded-xl bg-[#ffe1cc] px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-[#f5dcca] sm:inline-flex"
+                                to="/create-user">Create User</Link>
+
+
+                        </div>
                     </div>
                 </div>
-            </header>
+            </motion.div>
         </div>
-    );
-};
+    )
+}
 
-export default Navbar;
+export default Navbar
