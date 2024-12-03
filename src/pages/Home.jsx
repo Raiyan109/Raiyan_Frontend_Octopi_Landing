@@ -5,8 +5,8 @@ import {
     useMotionTemplate,
     useMotionValue,
     motion,
-    animate,
 } from "framer-motion";
+import Services from '../components/Services';
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 const Home = () => {
@@ -19,6 +19,7 @@ const Home = () => {
             <Navbar />
             <Hero />
             <About />
+            <Services />
         </motion.section>
     );
 };
