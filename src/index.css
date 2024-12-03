@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* From Uiverse.io by mobinkakei */ 
+.animated-text {
+    width: 100px;
+    height: 50px;
+    /* background: linear-gradient(to top, #00154c, #12376e, #23487f); */
+    color: #fff;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+  
+  .animated-text span {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: top 0.5s;
+  }
+  
+  .animated-text-one {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  .animated-text-two {
+    position: absolute;
+    width: 100%;
+    top: 150%;
+    left: 0;
+    transform: translateY(-50%);
+    color: orangered;
+  }
+  
+  .animated-text:hover .animated-text-one {
+    top: -100%;
+  }
+  
+  .animated-text:hover .animated-text-two {
+    top: 50%;
+  }
+  

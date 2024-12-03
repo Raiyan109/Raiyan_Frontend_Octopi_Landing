@@ -1,8 +1,27 @@
-import { Link } from "react-router-dom"
 import { motion } from "motion/react"
+import {
+    useMotionTemplate,
+    useMotionValue,
+    animate
+} from "framer-motion";
+import { useEffect } from "react";
+import { FiArrowRight } from "react-icons/fi";
 
+const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
 const Navbar = () => {
+    const color = useMotionValue(COLORS_TOP[0]);
+
+    useEffect(() => {
+        animate(color, COLORS_TOP, {
+            ease: "easeInOut",
+            duration: 10,
+            repeat: Infinity,
+            repeatType: "mirror",
+        });
+    }, []);
+    const border = useMotionTemplate`1px solid ${color}`;
+    const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
     return (
         <div
 
@@ -20,19 +39,38 @@ const Navbar = () => {
                             </a>
                         </div>
                         <div className="hidden md:flex md:items-center md:justify-center md:gap-5">
-                            <a aria-current="page"
-                                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-white transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                                href="#">How it works</a>
-                            <a className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                                href="#">Pricing</a>
+                            <button className="animated-text">
+                                <span className="animated-text-one">About us</span>
+                                <span className="animated-text-two">About us</span>
+                            </button>
+                            <button className="animated-text">
+                                <span className="animated-text-one">Services</span>
+                                <span className="animated-text-two">Services</span>
+                            </button>
+                            <button className="animated-text">
+                                <span className="animated-text-one">Works</span>
+                                <span className="animated-text-two">Works</span>
+                            </button>
+
                         </div>
                         <div className="flex items-center justify-end gap-3">
-                            <Link className="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"
-                                to="/manage-user">Manage User</Link>
-                            <Link className="hidden items-center justify-center rounded-xl bg-[#ffe1cc] px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-[#f5dcca] sm:inline-flex"
-                                to="/create-user">Create User</Link>
-
-
+                            {/* <AnimatedButton /> */}
+                            <motion.button
+                                style={{
+                                    border,
+                                    boxShadow,
+                                }}
+                                whileHover={{
+                                    scale: 1.015,
+                                }}
+                                whileTap={{
+                                    scale: 0.985,
+                                }}
+                                className="group relative flex w-fit items-center gap-1.5 rounded-full bg-gray-950/10 px-4 py-2 text-gray-50 transition-colors hover:bg-gray-950/50"
+                            >
+                                Contact
+                                <FiArrowRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
+                            </motion.button>
                         </div>
                     </div>
                 </div>
