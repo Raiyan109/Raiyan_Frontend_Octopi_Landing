@@ -11,7 +11,7 @@ const Services = () => {
         <div className="">
             <div className="mx-auto h-full  py-10 sm:max-w-xl md:max-w-full md:px-24 md:py-36 lg:max-w-screen-xl lg:px-8">
                 <div className="flex flex-col-reverse justify-between items-center xl:flex-row md:gap-10  gap-5">
-                    <div className="relative  lg:block lg:w-1/2">
+                    <div className="relative  lg:block lg:w-1/2 px-5 md:px-0">
                         <div
                             className="relative my-3 flex h-full flex-col w-full lg:w-[600px] overflow-hidden rounded-2xl bg-transparent text-gray-600 shadow-lg ring-1 ring-gray-200">
 
@@ -38,7 +38,7 @@ const Services = () => {
                                             1
 
                                         </motion.button>
-                                        <div className="mr-12 w-auto pt-1">
+                                        <div className=" w-auto pt-1">
                                             <h6 className="text-xl font-semibold text-white ">Creative Design</h6>
                                             <p className="mt-1 text-sm text-gray-100">Branding, Graphic Design, UI/UX
                                             </p>
@@ -63,7 +63,7 @@ const Services = () => {
                                             2
 
                                         </motion.button>
-                                        <div className="mr-12 w-auto pt-1">
+                                        <div className=" w-auto pt-1">
                                             <h6 className="text-xl font-semibold text-white">Consulting Services:</h6>
                                             <p className="mt-1 text-sm text-gray-100">Strategy, Business Analysis, Growth Hacking</p>
                                         </div>
@@ -85,7 +85,7 @@ const Services = () => {
                                             3
 
                                         </motion.button>
-                                        <div className="mr-12 w-auto pt-1">
+                                        <div className=" w-auto pt-1">
                                             <h6 className="text-xl font-semibold text-white">Web Development</h6>
                                             <p className="mt-1 text-sm text-gray-100">
                                                 Custom Websites, E-Commerce, Web Apps
@@ -110,7 +110,7 @@ const Services = () => {
                                             4
 
                                         </motion.button>
-                                        <div className="mr-12 w-auto pt-1">
+                                        <div className=" w-auto pt-1">
                                             <h6 className="text-xl font-semibold text-white">Digital Marketing</h6>
                                             <p className="mt-1 text-sm text-gray-100">SEO, Social Media Marketing, PPC Campaigns</p>
                                         </div>
